@@ -22,6 +22,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1354957699609594&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -97,7 +98,7 @@ src="https://www.facebook.com/tr?id=1354957699609594&ev=PageView&noscript=1"
     <h2>ROCIIT SINGH OFFICIAL 🏆</h2>
     <p class="exp">📊 17 years experience 📊</p>
 
-    <!-- ✅ Telegram Button with Subscribe Event -->
+    <!-- Telegram Button -->
     <a href="https://t.me/+XdFO9rV2Mk82YTE9" class="btn" id="joinBtn" target="_blank">JOIN TELEGRAM 💬</a>
 
     <h3 style="color:red;">Forex & Stock Market</h3>
@@ -113,11 +114,15 @@ src="https://www.facebook.com/tr?id=1354957699609594&ev=PageView&noscript=1"
     </p>
   </div>
 
-  <!-- ✅ Subscribe Event Trigger -->
+  <!-- FIXED: Subscribe Event with value + currency -->
   <script>
     document.getElementById("joinBtn").addEventListener("click", function() {
-      fbq('track', 'Subscribe');
+      fbq('track', 'Subscribe', {
+        value: 1.00,
+        currency: 'USD'
+      });
     });
   </script>
+
 </body>
 </html>
