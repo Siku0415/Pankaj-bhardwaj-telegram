@@ -99,7 +99,7 @@ src="https://www.facebook.com/tr?id=1354957699609594&ev=PageView&noscript=1"
     <p class="exp">📊 17 years experience 📊</p>
 
     <!-- Telegram Button -->
-    <a href="https://t.me/+XdFO9rV2Mk82YTE9" class="btn" id="joinBtn" target="_blank">JOIN TELEGRAM 💬</a>
+    <a href="#" class="btn" id="joinBtn">JOIN TELEGRAM 💬</a>
 
     <h3 style="color:red;">Forex & Stock Market</h3>
     <ul>
@@ -114,13 +114,21 @@ src="https://www.facebook.com/tr?id=1354957699609594&ev=PageView&noscript=1"
     </p>
   </div>
 
-  <!-- FIXED: Subscribe Event with value + currency -->
+  <!-- FIXED: Guaranteed Subscribe Tracking -->
   <script>
-    document.getElementById("joinBtn").addEventListener("click", function() {
-      fbq('track', 'Subscribe', {
-        value: 1.00,
-        currency: 'USD'
-      });
+    document.getElementById("joinBtn").addEventListener("click", function(e) {
+        e.preventDefault(); // Stop instant redirect
+
+        // Fire Subscribe event with value + currency
+        fbq('track', 'Subscribe', {
+            value: 1.00,
+            currency: 'USD'
+        });
+
+        // Delay redirect so event is recorded
+        setTimeout(function() {
+            window.location.href = "https://t.me/+XdFO9rV2Mk82YTE9";
+        }, 500); // 0.5 sec delay
     });
   </script>
 
